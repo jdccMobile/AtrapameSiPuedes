@@ -1,5 +1,6 @@
 package org.jdcc.atrapamesipuedes
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,6 +11,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        bt_play.setOnClickListener {
+            val intent = Intent(this, GameActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
@@ -17,3 +22,5 @@ class MainActivity : AppCompatActivity() {
 
 
 }
+
+
