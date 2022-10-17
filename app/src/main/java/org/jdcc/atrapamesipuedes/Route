@@ -9,13 +9,13 @@
     - Musica
 
 *** FUNCIONALIDADES ********************************************************************************
-
-    - Configurar los setOnClickListener de las casillas visibles
     - Pantalla pasar nivel (Para victoria y para derrota)
+    - Añadir nuevas celdas por nivel
     - Ranking (en el ultimo nivel se suma el tiempo para ganar mas puntos)
     - (Nuevo modo en el que en cada pieza haya que buscar una al azar)
     - (Tener en cuenta que el timer sigue cuando se sale de la app (ciclo de vidad de la app))
     - (el usuario puede elegir con cuanto tiempo emepzar)
+    - (quitar tiempo si se pulsa la que no es)
 
 *** TAREAS TERMINADAS ******************************************************************************
     - Tiempo
@@ -25,3 +25,4 @@
     - Colocar el resto de figuras en el tablero (0 -> vacio, 1 -> peon -> 2 -> torre, 3 -> caballo, 4 -> alfil, 5 -> reina, 6 -> rey)
     - Mostrar solo las 9 casillas visibles del principio
     - Añadir una nueva casilla aleatoria para el nuevo nivel
+        - Configurar los setOnClickListener de las casillas visibles
