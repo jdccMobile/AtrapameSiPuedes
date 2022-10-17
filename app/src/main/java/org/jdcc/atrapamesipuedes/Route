@@ -1,7 +1,28 @@
-*** ERRORES ***
+*** ERRORES ****************************************************************************************
+    - Mirar de deprecate en el redimensionamiento de elementos
 
-*** MEJORAS DE UX ***
+*** MEJORAS DE UX **********************************************************************************
+    -
 
-*** FUNCIONALIDADES ***
+*** MEJORAS DE UI **********************************************************************************
+    - Rey riendo y llorando
+    - Musica
 
-    - dejar 50dp de altura para el banner abajo
+*** FUNCIONALIDADES ********************************************************************************
+
+    - Tiempo
+    - Cuando el tiempo llegue a 0 marcar derrota
+    - Generar posicion aleatoria del rey
+    - Mostrar solo las 9 casillas visibles del principio
+    - Crear matriz del tablero para colocar piezas
+    - Colocar el resto de figuras en el tablero (0 -> vacio, 1 -> peon -> 2 -> torre, 3 -> caballo, 4 -> alfil, 5 -> reina, 6 -> rey)
+    - Configurar los setOnClickListener de las casillas visibles
+    - Pantalla pasar nivel (Para victoria y para derrota)
+    - Añadir una nueva casilla aleatoria para el nuevo nivel
+    - Ranking (en el ultimo nivel se suma el tiempo para ganar mas puntos)
+    - (Nuevo modo en el que en cada pieza haya que buscar una al azar)
+
+*** TAREAS TERMINADAS ******************************************************************************
+
+
+

@@ -2,4 +2,7 @@
 <resources>
     <string name="app_name">Catch me if you can</string>
     <string name="app_title">CATCH ME,\nIF\nYOU CAN</string>
+    <string name="game_title">CATCH ME</string>
+    <string name="game_level">Level</string>
+    <string name="game_time">Time</string>
 </resources>

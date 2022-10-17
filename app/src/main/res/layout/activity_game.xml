@@ -2,51 +2,116 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/bt_"
+    android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GameActivity">
 
-    <ImageButton
-        android:id="@+id/bt_back"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/bt_circle"
-        android:src="@drawable/ic_back_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05"
-        tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageButton
-        android:id="@+id/bt_pause"
-        android:layout_width="50dp"
+    <TextView
+        android:id="@+id/tv_title_game"
+        android:layout_width="275dp"
         android:layout_height="50dp"
-        android:background="@drawable/bt_circle"
-        android:src="@drawable/ic_puase_white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/yeseva_one"
+        android:gravity="center"
+        android:text="@string/game_title"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="275dp"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_game"
+        app:srcCompat="@drawable/ic_king_game" />
+
+
+    <TextView
+        android:id="@+id/tv_level_top"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="68dp"
+        android:background="@drawable/bg_title_game_top"
+        android:fontFamily="@font/yeseva_one"
+        android:gravity="center"
+        android:text="@string/game_level"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_level_bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.80"/>
+
+    <TextView
+        android:id="@+id/tv_level_bottom"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/bg_title_game_bottom"
+        android:fontFamily="@font/yeseva_one"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tl_Board"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_level_top"
+        app:layout_constraintVertical_bias="0.80"/>
+
+    <TextView
+        android:id="@+id/tv_time_top"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="68dp"
+        android:background="@drawable/bg_title_game_top"
+        android:fontFamily="@font/yeseva_one"
+        android:gravity="center"
+        android:text="@string/game_time"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_time_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.80"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tv_time_bottom"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/bg_title_game_bottom"
+        android:fontFamily="@font/yeseva_one"
+        android:gravity="center"
+        android:text="00:00"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tl_Board"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_time_top" />
 
     <TableLayout
         android:id="@+id/tl_Board"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="70dp"
-        android:background="@drawable/board_background"
+        android:background="@drawable/bg_board"
+        android:padding="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:padding="5dp">
+        app:layout_constraintVertical_bias="1.0">
 
         <TableRow
             android:layout_width="match_parent"
@@ -60,7 +125,7 @@
                 android:layout_column="0"
                 android:layout_weight="1"
                 android:background="@color/white_cell"
-                android:src="@drawable/ic_king_white"
+                android:src="@drawable/ic_king_game"
                 android:tag="c00"
                 android:visibility="visible" />
 
@@ -71,6 +136,7 @@
                 android:layout_column="1"
                 android:layout_weight="1"
                 android:background="@color/black_cell"
+                android:src="@drawable/ic_queen"
                 android:tag="c01" />
 
             <ImageView
@@ -80,7 +146,8 @@
                 android:layout_column="2"
                 android:layout_weight="1"
                 android:background="@color/white_cell"
-                android:tag="c02" />
+                android:tag="c02"
+                android:src="@drawable/ic_rook"/>
 
             <ImageView
                 android:id="@+id/iv_c03"
@@ -89,7 +156,8 @@
                 android:layout_column="3"
                 android:layout_weight="1"
                 android:background="@color/black_cell"
-                android:tag="c03" />
+                android:tag="c03"
+                android:src="@drawable/ic_pawn"/>
 
             <ImageView
                 android:id="@+id/iv_c04"
@@ -98,7 +166,8 @@
                 android:layout_column="4"
                 android:layout_weight="1"
                 android:background="@color/white_cell"
-                android:tag="c04" />
+                android:tag="c04"
+                android:src="@drawable/ic_bishop"/>
 
             <ImageView
                 android:id="@+id/iv_c05"
@@ -107,7 +176,8 @@
                 android:layout_column="5"
                 android:layout_weight="1"
                 android:background="@color/black_cell"
-                android:tag="c05" />
+                android:tag="c05"
+                android:src="@drawable/ic_knight"/>
 
             <ImageView
                 android:id="@+id/iv_c06"
@@ -161,7 +231,7 @@
                 android:tag="c12" />
 
             <ImageView
-                android:id="@+id/iv_13"
+                android:id="@+id/iv_c13"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_column="3"
@@ -221,7 +291,7 @@
                 android:tag="c20" />
 
             <ImageView
-                android:id="@+id/iv_20"
+                android:id="@+id/iv_c21"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_column="1"
@@ -317,7 +387,7 @@
                 android:tag="c32" />
 
             <ImageView
-                android:id="@+id/iv_33"
+                android:id="@+id/iv_c33"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_column="3"
@@ -438,6 +508,7 @@
                 android:layout_weight="1"
                 android:background="@color/black_cell"
                 android:tag="c07" />
+
         </TableRow>
 
         <TableRow
@@ -473,7 +544,7 @@
                 android:tag="c52" />
 
             <ImageView
-                android:id="@+id/iv_53"
+                android:id="@+id/iv_c53"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_column="3"
@@ -629,7 +700,7 @@
                 android:tag="c72" />
 
             <ImageView
-                android:id="@+id/iv_73"
+                android:id="@+id/iv_c73"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_column="3"
@@ -677,26 +748,52 @@
 
     </TableLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@drawable/bt_circle"
-        android:text="Tiempo"
-        android:gravity="center"
-        android:textColor="@color/white"
-        tools:layout_editor_absoluteX="214dp"
-        tools:layout_editor_absoluteY="95dp" />
+    <LinearLayout
+        android:id="@+id/ll_next_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:background="#EB232323"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@drawable/bt_circle"
-        android:text="Nivel"
-        android:textColor="@color/white"
-        android:gravity="center"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="95dp" />
+        <TextView
+            android:id="@+id/tv_level_next_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/yeseva_one"
+            android:gravity="center"
+            android:text="@string/game_level"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_time_next_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/yeseva_one"
+            android:gravity="center"
+            android:text="@string/game_time"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/ib_next_level"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bt_circle_white"
+            app:srcCompat="@drawable/ic_arrow_next_black"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
