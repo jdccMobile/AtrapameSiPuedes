@@ -4,5 +4,6 @@
     <string name="game_title">ATRÁPAME</string>
     <string name="game_level">Nivel</string>
     <string name="game_time">Tiempo</string>
+    <string name="game_lose">Pierdes</string>
 
 </resources>

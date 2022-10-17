@@ -5,4 +5,5 @@
     <string name="game_title">CATCH ME</string>
     <string name="game_level">Level</string>
     <string name="game_time">Time</string>
+    <string name="game_lose">You lost!</string>
 </resources>

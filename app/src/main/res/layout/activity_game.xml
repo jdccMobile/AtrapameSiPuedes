@@ -93,7 +93,7 @@
         android:background="@drawable/bg_title_game_bottom"
         android:fontFamily="@font/yeseva_one"
         android:gravity="center"
-        android:text="00:00"
+        android:text="00''"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tl_Board"
@@ -124,8 +124,7 @@
                 android:layout_height="50dp"
                 android:layout_column="0"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
-                android:src="@drawable/ic_king_game"
+                android:background="@drawable/bg_board"
                 android:tag="c00"
                 android:visibility="visible" />
 
@@ -136,7 +135,6 @@
                 android:layout_column="1"
                 android:layout_weight="1"
                 android:background="@color/black_cell"
-                android:src="@drawable/ic_queen"
                 android:tag="c01" />
 
             <ImageView
@@ -145,9 +143,8 @@
                 android:layout_height="50dp"
                 android:layout_column="2"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
-                android:tag="c02"
-                android:src="@drawable/ic_rook"/>
+                android:background="@drawable/bg_board"
+                android:tag="c02"/>
 
             <ImageView
                 android:id="@+id/iv_c03"
@@ -156,8 +153,7 @@
                 android:layout_column="3"
                 android:layout_weight="1"
                 android:background="@color/black_cell"
-                android:tag="c03"
-                android:src="@drawable/ic_pawn"/>
+                android:tag="c03" />
 
             <ImageView
                 android:id="@+id/iv_c04"
@@ -165,9 +161,8 @@
                 android:layout_height="50dp"
                 android:layout_column="4"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
-                android:tag="c04"
-                android:src="@drawable/ic_bishop"/>
+                android:background="@drawable/bg_board"
+                android:tag="c04" />
 
             <ImageView
                 android:id="@+id/iv_c05"
@@ -176,8 +171,7 @@
                 android:layout_column="5"
                 android:layout_weight="1"
                 android:background="@color/black_cell"
-                android:tag="c05"
-                android:src="@drawable/ic_knight"/>
+                android:tag="c05" />
 
             <ImageView
                 android:id="@+id/iv_c06"
@@ -185,7 +179,7 @@
                 android:layout_height="50dp"
                 android:layout_column="6"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c06" />
 
             <ImageView
@@ -218,7 +212,7 @@
                 android:layout_height="50dp"
                 android:layout_column="1"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c11" />
 
             <ImageView
@@ -236,7 +230,7 @@
                 android:layout_height="50dp"
                 android:layout_column="3"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c13" />
 
             <ImageView
@@ -254,7 +248,7 @@
                 android:layout_height="50dp"
                 android:layout_column="5"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c15" />
 
             <ImageView
@@ -272,7 +266,7 @@
                 android:layout_height="50dp"
                 android:layout_column="7"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c17" />
         </TableRow>
 
@@ -287,7 +281,7 @@
                 android:layout_height="50dp"
                 android:layout_column="0"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c20" />
 
             <ImageView
@@ -305,8 +299,8 @@
                 android:layout_height="50dp"
                 android:layout_column="2"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
-                android:tag="c22" />
+                android:tag="c22"
+                android:background="@drawable/bg_board"/>
 
             <ImageView
                 android:id="@+id/iv_c23"
@@ -323,7 +317,7 @@
                 android:layout_height="50dp"
                 android:layout_column="4"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c24" />
 
             <ImageView
@@ -341,7 +335,7 @@
                 android:layout_height="50dp"
                 android:layout_column="6"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c26" />
 
             <ImageView
@@ -374,7 +368,7 @@
                 android:layout_height="50dp"
                 android:layout_column="1"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c31" />
 
             <ImageView
@@ -392,7 +386,7 @@
                 android:layout_height="50dp"
                 android:layout_column="3"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c33" />
 
             <ImageView
@@ -410,7 +404,7 @@
                 android:layout_height="50dp"
                 android:layout_column="5"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c35" />
 
             <ImageView
@@ -428,7 +422,7 @@
                 android:layout_height="50dp"
                 android:layout_column="7"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c37" />
         </TableRow>
 
@@ -443,7 +437,7 @@
                 android:layout_height="50dp"
                 android:layout_column="0"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c40" />
 
             <ImageView
@@ -461,7 +455,7 @@
                 android:layout_height="50dp"
                 android:layout_column="2"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c42" />
 
             <ImageView
@@ -479,7 +473,7 @@
                 android:layout_height="50dp"
                 android:layout_column="4"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c44" />
 
             <ImageView
@@ -497,7 +491,7 @@
                 android:layout_height="50dp"
                 android:layout_column="6"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c46" />
 
             <ImageView
@@ -531,7 +525,7 @@
                 android:layout_height="50dp"
                 android:layout_column="1"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c51" />
 
             <ImageView
@@ -549,7 +543,7 @@
                 android:layout_height="50dp"
                 android:layout_column="3"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c53" />
 
             <ImageView
@@ -567,7 +561,7 @@
                 android:layout_height="50dp"
                 android:layout_column="5"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c55" />
 
             <ImageView
@@ -585,7 +579,7 @@
                 android:layout_height="50dp"
                 android:layout_column="7"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c57" />
         </TableRow>
 
@@ -600,7 +594,7 @@
                 android:layout_height="50dp"
                 android:layout_column="0"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c60" />
 
             <ImageView
@@ -618,7 +612,7 @@
                 android:layout_height="50dp"
                 android:layout_column="2"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c62" />
 
             <ImageView
@@ -636,7 +630,7 @@
                 android:layout_height="50dp"
                 android:layout_column="4"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c64" />
 
             <ImageView
@@ -654,7 +648,7 @@
                 android:layout_height="50dp"
                 android:layout_column="6"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c66" />
 
             <ImageView
@@ -687,7 +681,7 @@
                 android:layout_height="50dp"
                 android:layout_column="1"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c71" />
 
             <ImageView
@@ -705,7 +699,7 @@
                 android:layout_height="50dp"
                 android:layout_column="3"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c73" />
 
             <ImageView
@@ -723,7 +717,7 @@
                 android:layout_height="50dp"
                 android:layout_column="5"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c75" />
 
             <ImageView
@@ -741,7 +735,7 @@
                 android:layout_height="50dp"
                 android:layout_column="7"
                 android:layout_weight="1"
-                android:background="@color/white_cell"
+                android:background="@drawable/bg_board"
                 android:tag="c77" />
         </TableRow>
 

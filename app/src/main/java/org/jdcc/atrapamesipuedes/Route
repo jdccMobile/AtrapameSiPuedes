@@ -1,5 +1,5 @@
 *** ERRORES ****************************************************************************************
-    - Mirar de deprecate en el redimensionamiento de elementos
+    - Mirar de deprecate en el redimensionamiento de elementos (defaultDisplay y getSize)
 
 *** MEJORAS DE UX **********************************************************************************
     -
@@ -10,19 +10,18 @@
 
 *** FUNCIONALIDADES ********************************************************************************
 
+    - Configurar los setOnClickListener de las casillas visibles
+    - Pantalla pasar nivel (Para victoria y para derrota)
+    - Ranking (en el ultimo nivel se suma el tiempo para ganar mas puntos)
+    - (Nuevo modo en el que en cada pieza haya que buscar una al azar)
+    - (Tener en cuenta que el timer sigue cuando se sale de la app (ciclo de vidad de la app))
+    - (el usuario puede elegir con cuanto tiempo emepzar)
+
+*** TAREAS TERMINADAS ******************************************************************************
     - Tiempo
     - Cuando el tiempo llegue a 0 marcar derrota
     - Generar posicion aleatoria del rey
-    - Mostrar solo las 9 casillas visibles del principio
     - Crear matriz del tablero para colocar piezas
     - Colocar el resto de figuras en el tablero (0 -> vacio, 1 -> peon -> 2 -> torre, 3 -> caballo, 4 -> alfil, 5 -> reina, 6 -> rey)
-    - Configurar los setOnClickListener de las casillas visibles
-    - Pantalla pasar nivel (Para victoria y para derrota)
+    - Mostrar solo las 9 casillas visibles del principio
     - Añadir una nueva casilla aleatoria para el nuevo nivel
-    - Ranking (en el ultimo nivel se suma el tiempo para ganar mas puntos)
-    - (Nuevo modo en el que en cada pieza haya que buscar una al azar)
-
-*** TAREAS TERMINADAS ******************************************************************************
-
-
-
