@@ -6,4 +6,7 @@
     <string name="game_level">Level</string>
     <string name="game_time">Time</string>
     <string name="game_lose">You lost!</string>
+    <string name="win_menu">YOU FIND ME... </string>
+    <string name="lose_menu">YOU LOST!</string>
+    <string name="level_menu">Hunted kings </string>
 </resources>

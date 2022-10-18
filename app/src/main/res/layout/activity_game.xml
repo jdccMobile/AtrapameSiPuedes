@@ -17,7 +17,7 @@
         android:gravity="center"
         android:text="@string/game_title"
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,6 +27,7 @@
         android:id="@+id/imageView"
         android:layout_width="275dp"
         android:layout_height="40dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_game"
@@ -35,8 +36,8 @@
 
     <TextView
         android:id="@+id/tv_level_top"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
         android:layout_marginStart="68dp"
         android:background="@drawable/bg_title_game_top"
         android:fontFamily="@font/yeseva_one"
@@ -44,6 +45,7 @@
         android:text="@string/game_level"
         android:textColor="@color/white"
         android:textStyle="bold"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_level_bottom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
@@ -52,14 +54,15 @@
 
     <TextView
         android:id="@+id/tv_level_bottom"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
         android:layout_marginStart="68dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/bg_title_game_bottom"
         android:fontFamily="@font/yeseva_one"
         android:gravity="center"
         android:text="1"
+        android:textSize="20sp"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tl_Board"
@@ -69,8 +72,8 @@
 
     <TextView
         android:id="@+id/tv_time_top"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
         android:layout_marginEnd="68dp"
         android:background="@drawable/bg_title_game_top"
         android:fontFamily="@font/yeseva_one"
@@ -78,6 +81,7 @@
         android:text="@string/game_time"
         android:textColor="@color/white"
         android:textStyle="bold"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_time_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
@@ -86,16 +90,17 @@
 
     <TextView
         android:id="@+id/tv_time_bottom"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
         android:layout_marginEnd="68dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/bg_title_game_bottom"
         android:fontFamily="@font/yeseva_one"
         android:gravity="center"
-        android:text="00''"
+        android:text="0''"
         android:textColor="@color/white"
         android:textStyle="bold"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tl_Board"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_time_top" />
@@ -110,7 +115,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="1.0"
+        android:background="@drawable/bg_board">
 
         <TableRow
             android:layout_width="match_parent"
@@ -123,7 +129,7 @@
                 android:layout_height="50dp"
                 android:layout_column="0"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c00"
                 android:visibility="visible" />
 
@@ -142,7 +148,7 @@
                 android:layout_height="50dp"
                 android:layout_column="2"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c02"/>
 
             <ImageView
@@ -160,7 +166,7 @@
                 android:layout_height="50dp"
                 android:layout_column="4"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c04" />
 
             <ImageView
@@ -178,7 +184,7 @@
                 android:layout_height="50dp"
                 android:layout_column="6"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c06" />
 
             <ImageView
@@ -211,7 +217,7 @@
                 android:layout_height="50dp"
                 android:layout_column="1"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c11" />
 
             <ImageView
@@ -229,7 +235,7 @@
                 android:layout_height="50dp"
                 android:layout_column="3"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c13" />
 
             <ImageView
@@ -247,7 +253,7 @@
                 android:layout_height="50dp"
                 android:layout_column="5"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c15" />
 
             <ImageView
@@ -265,7 +271,7 @@
                 android:layout_height="50dp"
                 android:layout_column="7"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c17" />
         </TableRow>
 
@@ -280,7 +286,7 @@
                 android:layout_height="50dp"
                 android:layout_column="0"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c20" />
 
             <ImageView
@@ -299,7 +305,7 @@
                 android:layout_column="2"
                 android:layout_weight="1"
                 android:tag="c22"
-                android:background="@drawable/bg_board"/>
+                android:background="@drawable/bg_white_cell"/>
 
             <ImageView
                 android:id="@+id/iv_c23"
@@ -316,7 +322,7 @@
                 android:layout_height="50dp"
                 android:layout_column="4"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c24" />
 
             <ImageView
@@ -334,7 +340,7 @@
                 android:layout_height="50dp"
                 android:layout_column="6"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c26" />
 
             <ImageView
@@ -367,7 +373,7 @@
                 android:layout_height="50dp"
                 android:layout_column="1"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c31" />
 
             <ImageView
@@ -385,7 +391,7 @@
                 android:layout_height="50dp"
                 android:layout_column="3"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c33" />
 
             <ImageView
@@ -403,7 +409,7 @@
                 android:layout_height="50dp"
                 android:layout_column="5"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c35" />
 
             <ImageView
@@ -421,7 +427,7 @@
                 android:layout_height="50dp"
                 android:layout_column="7"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c37" />
         </TableRow>
 
@@ -436,7 +442,7 @@
                 android:layout_height="50dp"
                 android:layout_column="0"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c40" />
 
             <ImageView
@@ -454,7 +460,7 @@
                 android:layout_height="50dp"
                 android:layout_column="2"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c42" />
 
             <ImageView
@@ -472,7 +478,7 @@
                 android:layout_height="50dp"
                 android:layout_column="4"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c44" />
 
             <ImageView
@@ -490,7 +496,7 @@
                 android:layout_height="50dp"
                 android:layout_column="6"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c46" />
 
             <ImageView
@@ -524,7 +530,7 @@
                 android:layout_height="50dp"
                 android:layout_column="1"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c51" />
 
             <ImageView
@@ -542,7 +548,7 @@
                 android:layout_height="50dp"
                 android:layout_column="3"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c53" />
 
             <ImageView
@@ -560,7 +566,7 @@
                 android:layout_height="50dp"
                 android:layout_column="5"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c55" />
 
             <ImageView
@@ -578,7 +584,7 @@
                 android:layout_height="50dp"
                 android:layout_column="7"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c57" />
         </TableRow>
 
@@ -593,7 +599,7 @@
                 android:layout_height="50dp"
                 android:layout_column="0"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c60" />
 
             <ImageView
@@ -611,7 +617,7 @@
                 android:layout_height="50dp"
                 android:layout_column="2"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c62" />
 
             <ImageView
@@ -629,7 +635,7 @@
                 android:layout_height="50dp"
                 android:layout_column="4"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c64" />
 
             <ImageView
@@ -647,7 +653,7 @@
                 android:layout_height="50dp"
                 android:layout_column="6"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c66" />
 
             <ImageView
@@ -657,7 +663,7 @@
                 android:layout_column="7"
                 android:layout_weight="1"
                 android:background="@color/black_cell"
-                android:tag="c07" />
+                android:tag="c67" />
         </TableRow>
 
         <TableRow
@@ -680,7 +686,7 @@
                 android:layout_height="50dp"
                 android:layout_column="1"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c71" />
 
             <ImageView
@@ -698,7 +704,7 @@
                 android:layout_height="50dp"
                 android:layout_column="3"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c73" />
 
             <ImageView
@@ -716,7 +722,7 @@
                 android:layout_height="50dp"
                 android:layout_column="5"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c75" />
 
             <ImageView
@@ -734,7 +740,7 @@
                 android:layout_height="50dp"
                 android:layout_column="7"
                 android:layout_weight="1"
-                android:background="@drawable/bg_board"
+                android:background="@drawable/bg_white_cell"
                 android:tag="c77" />
         </TableRow>
 
@@ -749,40 +755,41 @@
         android:background="#EB232323"
         android:orientation="vertical"
         android:padding="20dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/tv_level_next_level"
+            android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/yeseva_one"
             android:gravity="center"
-            android:text="@string/game_level"
+            android:text="@string/win_menu"
             android:textColor="@color/white"
-            android:textSize="40sp"
+            android:textSize="35sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_time_next_level"
+            android:id="@+id/tv_subtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/yeseva_one"
             android:gravity="center"
-            android:text="@string/game_time"
+            android:text="@string/level_menu"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <ImageButton
             android:id="@+id/ib_next_level"
+            android:tag="ib_next_level"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             android:background="@drawable/bt_circle_white"
             app:srcCompat="@drawable/ic_arrow_next_black"
             tools:ignore="SpeakableTextPresentCheck" />
