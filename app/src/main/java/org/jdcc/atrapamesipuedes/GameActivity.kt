@@ -14,13 +14,13 @@ import kotlinx.android.synthetic.main.activity_game.*
 
 class GameActivity : AppCompatActivity(), View.OnClickListener {
 
-    var msInFuture : Long = 6000           // 6 seconds
-    lateinit var countDown : CountDownTimer
+    private var msInFuture: Long = 0      // 6 seconds
+    private var msExtra : Long = 0
+    private lateinit var countDown : CountDownTimer
     private var kingCaught = false
     private var lost = false
     private lateinit var board : Array<IntArray>
     private var level = 1
-    private var numberCells = 16
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,20 +60,21 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun resetBoard(){
+        msInFuture = 6000
         board = arrayOf(
-            intArrayOf(0, 0, 0, 0, 0, 0, 0, 0),     // 0 -> empty
-            intArrayOf(0, 0, 0, 0, 0, 0, 0, 0),     // 1 -> pawn
-            intArrayOf(0, 0, 0, 0, 0, 0, 0, 0),     // 2 -> rook
-            intArrayOf(0, 0, 0, 0, 0, 0, 0, 0),     // 3 -> knight
-            intArrayOf(0, 0, 0, 0, 0, 0, 0, 0),     // 4 -> bishop
-            intArrayOf(0, 0, 0, 0, 0, 0, 0, 0),     // 5 -> queen
-            intArrayOf(0, 0, 0, 0, 0, 0, 0, 0),     // 6 -> king
-            intArrayOf(0, 0, 0, 0, 0, 0, 0, 0)      // 7 -> Invisible Cell
+            intArrayOf(7, 7, 7, 7, 7, 7, 7, 7),     // 0 -> empty/visible
+            intArrayOf(7, 7, 7, 7, 7, 7, 7, 7),     // 1 -> pawn
+            intArrayOf(7, 7, 7, 7, 7, 7, 7, 7),     // 2 -> rook
+            intArrayOf(7, 7, 7, 7, 7, 7, 7, 7),     // 3 -> knight
+            intArrayOf(7, 7, 7, 7, 7, 7, 7, 7),     // 4 -> bishop
+            intArrayOf(7, 7, 7, 7, 7, 7, 7, 7),     // 5 -> queen
+            intArrayOf(7, 7, 7, 7, 7, 7, 7, 7),     // 6 -> king
+            intArrayOf(7, 7, 7, 7, 7, 7, 7, 7)      // 7 -> Invisible Cell
         )
         var iv : ImageView
         var x = 0
         var y = 0
-        for(i in 0..7){
+        for(i in 0..7){                                                                       // Set all the cells as invisible (7)
             for(j in 0..7){
                 iv = findViewById(resources.getIdentifier("iv_c$i$j","id",packageName))
                 iv.visibility = View.INVISIBLE
@@ -99,30 +100,31 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
         var iv : ImageView
         var x = 0
         var y = 0
+        var auxRandom = 0
+        var cont = 0
+        var numberNewCell = 0
+        val freeCell: MutableList<String> = mutableListOf()
 
-        if(level == 1){
-            for(i in 0..numberCells) {
-                x = (0..7).random()
-                y = (0..7).random()
-                iv = findViewById(resources.getIdentifier("iv_c$x$y", "id", packageName))
-                iv.visibility = View.VISIBLE
-
+        for(i in 0..7){
+            for(j in 0..7) {
+                if(board[i][j] == 7) freeCell.add("$i$j")                                           // Add free cells to the list
             }
-
         }
-        else if(level == 48){
-            //TODO INTENT A LA PANTALLA FINAL, ME DERROTASTE
-        }
-        else{                                                                                     // Add a new random visible cell
-            do{
-                x = arrayOf(0,1,6,7).random()
-                y = arrayOf(0,1,6,7).random()
-                iv = findViewById(resources.getIdentifier("iv_c$x$y","id",packageName))
-            } while(iv.visibility == View.VISIBLE)
+        if (level == 1) numberNewCell = 24
+        else numberNewCell = 2                                                                      // 2 new cells each level
 
+        do{
+            auxRandom = (0..freeCell.size).random()                                           // Choose a random free cell from the list
+            x = freeCell.elementAt(auxRandom).subSequence(0,1).toString().toInt()
+            y = freeCell.elementAt(auxRandom).subSequence(1,2).toString().toInt()
+            freeCell.removeAt(auxRandom)
+            iv = findViewById(resources.getIdentifier("iv_c$x$y", "id", packageName))
             iv.visibility = View.VISIBLE
-            numberCells++
-        }
+            board[x][y] = 0
+            cont++
+
+        } while(cont != numberNewCell)
+
     }
 
     private fun randomPosition() {
@@ -131,34 +133,36 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
         var i = 0
         var j = 0
 
-        for (x in 0..7) {                                                                     // Randomize the pieces in the whole board
+        for (x in 0..7) {                                                                     // Randomize the pieces in the whole visible board
             for (y in 0..7) {
                 iv = findViewById(resources.getIdentifier("iv_c$x$y", "id", packageName))
-                typePiece = (0..5).random()
-                when (typePiece) {
-                    1 -> {
-                        iv.setImageResource(R.drawable.ic_pawn)
-                        board[x][y] = 1
-                    }
-                    2 -> {
-                        iv.setImageResource(R.drawable.ic_rook)
-                        board[x][y] = 2
-                    }
-                    3 -> {
-                        iv.setImageResource(R.drawable.ic_knight)
-                        board[x][y] = 3
-                    }
-                    4 -> {
-                        iv.setImageResource(R.drawable.ic_bishop)
-                        board[x][y] = 4
-                    }
-                    5 -> {
-                        iv.setImageResource(R.drawable.ic_queen)
-                        board[x][y] = 5
-                    }
-                    else -> {
-                        board[x][y] = 0
-                        iv.setImageResource(0)
+                if(iv.visibility == View.VISIBLE){
+                    typePiece = (0..5).random()
+                    when (typePiece) {
+                        1 -> {
+                            iv.setImageResource(R.drawable.ic_pawn)
+                            board[x][y] = 1
+                        }
+                        2 -> {
+                            iv.setImageResource(R.drawable.ic_rook)
+                            board[x][y] = 2
+                        }
+                        3 -> {
+                            iv.setImageResource(R.drawable.ic_knight)
+                            board[x][y] = 3
+                        }
+                        4 -> {
+                            iv.setImageResource(R.drawable.ic_bishop)
+                            board[x][y] = 4
+                        }
+                        5 -> {
+                            iv.setImageResource(R.drawable.ic_queen)
+                            board[x][y] = 5
+                        }
+                        else -> {
+                            board[x][y] = 0
+                            iv.setImageResource(0)
+                        }
                     }
                 }
             }
@@ -177,19 +181,14 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
 
         countDown = object : CountDownTimer(msInFuture, countDownInterval){
             override fun onTick(millisUntilFinished: Long) {
-                if(kingCaught){
-                    msInFuture = millisUntilFinished  + 3000                                        // 2 seconds more each level, (redondea hacia abajo)
-                    countDown.cancel()
-                } else{
-                    if ((millisUntilFinished / 1000) < 6 ) tv_time_bottom.setTextColor(Color.parseColor("#FF0000")) // the last 5 seconds are red
-                    tv_time_bottom.text = (millisUntilFinished / 1000).toString() + " ''"
-                }
+                msExtra = millisUntilFinished
+                if ((millisUntilFinished / 1000) < 6 ) tv_time_bottom.setTextColor(Color.parseColor("#FF0000")) // the last 5 seconds are red
+                tv_time_bottom.text = (millisUntilFinished / 1000).toString() + " ''"
             }
 
             override fun onFinish() {
                 countDown.cancel()
                 lost = true
-
                 ll_next_level.visibility = View.VISIBLE
                 tv_title.text = getString(R.string.lose_menu)
                 tv_subtitle.text = getString(R.string.level_menu) + " ${level-1}"
@@ -285,8 +284,13 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
 
         if(id == "ib_next_level"){
             if(!lost){
-                level++
-                startGame()
+                if(level == 20){                                                                    // final level
+                    var intent = Intent(this, FinalActivity::class.java)
+                    startActivity(intent)
+                } else{
+                    level++
+                    startGame()
+                }
             }else{
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
@@ -298,9 +302,13 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
 
             if(board[x][y] == 6){
                 ll_next_level.visibility = View.VISIBLE
+                if(level == 20) tv_title.text = getString(R.string.final_win_menu)
+                else tv_title.text = getString(R.string.win_menu)
                 ib_next_level.setImageResource(R.drawable.ic_arrow_next_black)
                 tv_subtitle.text = getString(R.string.level_menu) + " ${level}"
                 kingCaught = true
+                countDown.cancel()
+                msInFuture = msExtra  + 2000                                                        // Add 2 extra ms each level
             }
         }
 

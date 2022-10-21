@@ -6,6 +6,7 @@
     <string name="game_time">Tiempo</string>
     <string name="game_lose">Pierdes</string>
     <string name="win_menu">ME ENCONTRÁSTE... </string>
+    <string name="final_win_menu">ME GANASTE... </string>
     <string name="lose_menu">!PERDISTE!</string>
     <string name="level_menu">Reyes cazados: </string>
 

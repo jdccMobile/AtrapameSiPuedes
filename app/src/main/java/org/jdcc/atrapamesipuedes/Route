@@ -1,5 +1,5 @@
 *** ERRORES ****************************************************************************************
-    - El temporizador falla a veces
+    - Generador de piezas aleatorias para todos los niveles
 
 *** MEJORAS DE UX **********************************************************************************
     -
@@ -37,3 +37,4 @@
     - Configurar los setOnClickListener de las casillas visibles
     - Añadir nuevas celdas por nivel
     - Pantalla pasar nivel (Para victoria y para derrota)
+    - El temporizador falla a veces
