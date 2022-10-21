@@ -1,5 +1,40 @@
-*** ERRORES ***
+*** ERRORES ****************************************************************************************
+    - Generador de piezas aleatorias para todos los niveles
 
-*** MEJORAS DE UX ***
+*** MEJORAS DE UX **********************************************************************************
+    -
 
-*** FUNCIONALIDADES ***
+*** MEJORAS DE UI **********************************************************************************
+    - Rey riendo y llorando
+    - Si se encuentra el rey poner +3sg
+    - Musica
+    - Reducir un pelin el padding de las fichas??
+    - Poner en el ultimo nivel al rey dorado
+    - En vez de boton de traduccion boton de ayuda??
+
+
+*** FUNCIONALIDADES ********************************************************************************
+    - Pantalla de final de juego
+    - Boton de compartir
+    - Anuncios
+    - Boton de vida extra con anuncio
+    - Ranking (en el ultimo nivel se suma el tiempo para ganar mas puntos)
+    - (Nuevo modo en el que en cada pieza haya que buscar una al azar)
+    - (Tener en cuenta que el timer sigue cuando se sale de la app (ciclo de vidad de la app))
+    - (el usuario puede elegir con cuanto tiempo emepzar)
+    - (quitar tiempo si se pulsa la que no es)
+    - (como coger el color en codigo)
+
+
+*** TAREAS TERMINADAS ******************************************************************************
+    - Tiempo
+    - Cuando el tiempo llegue a 0 marcar derrota
+    - Generar posicion aleatoria del rey
+    - Crear matriz del tablero para colocar piezas
+    - Colocar el resto de figuras en el tablero (0 -> vacio, 1 -> peon -> 2 -> torre, 3 -> caballo, 4 -> alfil, 5 -> reina, 6 -> rey)
+    - Mostrar solo las 9 casillas visibles del principio
+    - Añadir una nueva casilla aleatoria para el nuevo nivel
+    - Configurar los setOnClickListener de las casillas visibles
+    - Añadir nuevas celdas por nivel
+    - Pantalla pasar nivel (Para victoria y para derrota)
+    - El temporizador falla a veces

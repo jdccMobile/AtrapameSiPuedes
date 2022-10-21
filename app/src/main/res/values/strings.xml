@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">AtrapameSiPuedes</string>
     <string name="app_title">ATRÁPAME,\nSI\nPUEDES</string>
+    <string name="game_title">ATRÁPAME</string>
+    <string name="game_level">Nivel</string>
+    <string name="game_time">Tiempo</string>
+    <string name="game_lose">Pierdes</string>
+    <string name="win_menu">ME ENCONTRÁSTE... </string>
+    <string name="final_win_menu">ME GANASTE... </string>
+    <string name="lose_menu">!PERDISTE!</string>
+    <string name="level_menu">Reyes cazados: </string>
+
 </resources>
