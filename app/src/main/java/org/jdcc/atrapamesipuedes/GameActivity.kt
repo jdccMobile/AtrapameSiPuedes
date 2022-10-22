@@ -284,8 +284,10 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
 
         if(id == "ib_next_level"){
             if(!lost){
-                if(level == 20){                                                                    // final level
+                if(level == 20){ // final level
+                    var score : Int = 20 + (msExtra / 1000).toInt()
                     var intent = Intent(this, FinalActivity::class.java)
+                    intent.putExtra("score",score)
                     startActivity(intent)
                 } else{
                     level++
