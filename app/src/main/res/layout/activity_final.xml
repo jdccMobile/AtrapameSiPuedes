@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_board"
     tools:context=".FinalActivity"
     tools:layout_editor_absoluteX="-1dp"
     tools:layout_editor_absoluteY="32dp">
@@ -68,40 +69,57 @@
         android:id="@+id/bt_final_home"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/bt_circle"
         android:src="@drawable/ic_home_white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_score"
+        app:layout_constraintTop_toBottomOf="@+id/tv_best_score"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/bt_final_share"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/bt_circle"
         android:src="@drawable/ic_share_white"
         app:layout_constraintEnd_toStartOf="@+id/bt_final_home"
-        app:layout_constraintHorizontal_bias="0.791"
-        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_score"
+        app:layout_constraintTop_toBottomOf="@+id/tv_best_score"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/bt_final_ranking"
+        android:id="@+id/bt_final_applause"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/bt_circle"
-        android:src="@drawable/ic_ranking_white"
+        android:src="@drawable/ic_confeti_white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toEndOf="@+id/bt_final_home"
-        app:layout_constraintTop_toBottomOf="@+id/tv_score"
+        app:layout_constraintTop_toBottomOf="@+id/tv_best_score"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_best_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/yeseva_one"
+        android:gravity="center"
+        android:text="Mejor puntuación: "
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_score"
+        tools:layout_editor_absoluteX="176dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

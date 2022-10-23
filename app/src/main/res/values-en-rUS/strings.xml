@@ -10,5 +10,6 @@
     <string name="final_win_menu">YOU WIN ME... </string>
     <string name="lose_menu">YOU LOST!</string>
     <string name="level_menu">Hunted kings </string>
+    <string name="best_score">Best score: </string>
 
 </resources>

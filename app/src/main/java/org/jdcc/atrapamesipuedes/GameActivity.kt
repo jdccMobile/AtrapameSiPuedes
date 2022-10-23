@@ -1,8 +1,10 @@
 package org.jdcc.atrapamesipuedes
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Point
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -10,24 +12,47 @@ import android.util.TypedValue
 import android.view.View
 import android.widget.ImageView
 import android.widget.TableRow
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_game.*
 
 class GameActivity : AppCompatActivity(), View.OnClickListener {
 
-    private var msInFuture: Long = 0      // 6 seconds
+    private var msInFuture: Long = 0
     private var msExtra : Long = 0
     private lateinit var countDown : CountDownTimer
     private var kingCaught = false
     private var lost = false
     private lateinit var board : Array<IntArray>
     private var level = 1
+    lateinit var mAdView : AdView
+    private lateinit var mpButton : MediaPlayer
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
         initScreenGame()
+        initSound()
+        setAdds()
         buttons()
+    }
+
+    private fun setAdds(){
+        MobileAds.initialize(this) {}
+
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+    }
+
+    private fun initSound(){
+        mpButton = MediaPlayer.create(this, R.raw.button)
+        mpButton.isLooping = false
+
     }
 
     private fun initScreenGame(){
@@ -102,7 +127,7 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
         var y = 0
         var auxRandom = 0
         var cont = 0
-        var numberNewCell = 0
+        var numberNewCell : Int
         val freeCell: MutableList<String> = mutableListOf()
 
         for(i in 0..7){
@@ -114,7 +139,7 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
         else numberNewCell = 2                                                                      // 2 new cells each level
 
         do{
-            auxRandom = (0..freeCell.size).random()                                           // Choose a random free cell from the list
+            auxRandom = (0 until freeCell.size).random()                                           // Choose a random free cell from the list
             x = freeCell.elementAt(auxRandom).subSequence(0,1).toString().toInt()
             y = freeCell.elementAt(auxRandom).subSequence(1,2).toString().toInt()
             freeCell.removeAt(auxRandom)
@@ -283,11 +308,13 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
         var id = v?.tag.toString()
 
         if(id == "ib_next_level"){
+            mpButton.start()
             if(!lost){
                 if(level == 20){ // final level
                     var score : Int = 20 + (msExtra / 1000).toInt()
                     var intent = Intent(this, FinalActivity::class.java)
                     intent.putExtra("score",score)
+                    sharedPreferences(score)
                     startActivity(intent)
                 } else{
                     level++
@@ -315,6 +342,16 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
         }
 
 
+    }
+
+    private fun sharedPreferences(score: Int){
+        val prefs =  getSharedPreferences("prefs",Context.MODE_PRIVATE)
+        var oldScore = prefs.getInt("score", 0)
+        if(oldScore < score) {
+            val editor = prefs.edit()
+            editor.putInt("score", score)
+            editor.apply()
+        }
     }
 
 

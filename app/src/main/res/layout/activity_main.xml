@@ -26,12 +26,12 @@
     <ImageView
         android:id="@+id/iv_king"
         android:layout_width="151dp"
-        android:layout_height="741dp"
+        android:layout_marginEnd="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/king" />
+        app:srcCompat="@drawable/king"
+        android:layout_height="match_parent"/>
 
     <ImageButton
         android:id="@+id/bt_play"
@@ -49,49 +49,17 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/bt_ranking"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginRight="5dp"
-        android:background="@drawable/bt_circle"
-        android:src="@drawable/ic_ranking_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/bt_share"
-        app:layout_constraintHorizontal_bias="0.21"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_play"
-        app:layout_constraintVertical_bias="0.333"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
         android:id="@+id/bt_share"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginRight="5dp"
         android:background="@drawable/bt_circle"
         android:src="@drawable/ic_share_white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/bt_language"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/bt_ranking"
-        app:layout_constraintTop_toBottomOf="@+id/bt_play"
-        app:layout_constraintVertical_bias="0.333"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-
-    <ImageButton
-        android:id="@+id/bt_language"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/bt_circle"
-        android:src="@drawable/ic_translate_white"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/bt_share"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_play"
-        app:layout_constraintVertical_bias="0.333"
+        app:layout_constraintVertical_bias="0.302"
         tools:ignore="SpeakableTextPresentCheck" />
 
 

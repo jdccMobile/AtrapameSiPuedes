@@ -8,11 +8,14 @@ import androidx.core.app.ActivityCompat
 import kotlinx.android.synthetic.main.activity_final.*
 import android.Manifest
 import android.content.ContentValues
+import android.content.Context
 import android.graphics.Bitmap
+import android.media.MediaPlayer
 import android.media.MediaScannerConnection
 import android.net.Uri
 import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
 import androidx.test.runner.screenshot.ScreenCapture
 import androidx.test.runner.screenshot.Screenshot.capture
 import java.io.File
@@ -24,18 +27,37 @@ class FinalActivity : AppCompatActivity(), View.OnClickListener {
 
     private var bitmap : Bitmap? = null
     private var score = 0
+    private lateinit var mpApplause : MediaPlayer
+    private lateinit var mpButton : MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_final)
 
+        initActivity()
+        initSound()
+        bt_final_home.setOnClickListener(this)
+        bt_final_share.setOnClickListener(this)
+        bt_final_applause.setOnClickListener(this)
+    }
 
+    private fun initSound(){
+        mpButton = MediaPlayer.create(this, R.raw.button)
+        mpButton.isLooping = false
+
+        mpApplause = MediaPlayer.create(this, R.raw.applause)
+        mpApplause.isLooping = false
+
+    }
+
+    private fun initActivity(){
         val bundle = intent.extras
         score = bundle?.getInt("score")!!
         tv_score.text = score.toString()
-        bt_final_home.setOnClickListener(this)
-        bt_final_share.setOnClickListener(this)
-        bt_final_ranking.setOnClickListener(this)
+
+        val prefs =  getSharedPreferences("prefs", Context.MODE_PRIVATE)
+        var score = prefs.getInt("score", 0)
+        tv_best_score.text = getString(R.string.level_menu) + " $score"
     }
 
     private fun shareGame(){                                                                        // Share the game with a screenshot
@@ -59,7 +81,7 @@ class FinalActivity : AppCompatActivity(), View.OnClickListener {
             shareIntent.putExtra(Intent.EXTRA_TEXT,text)
             shareIntent.type = "image/png"
 
-            val finalShareIntent = Intent.createChooser(shareIntent,"Escoge la aplicacion con la que compartir")
+            val finalShareIntent = Intent.createChooser(shareIntent, "Escoge la aplicacion con la que compartir")
             finalShareIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             this.startActivity(finalShareIntent)
 
@@ -111,19 +133,23 @@ class FinalActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onBackPressed() {                                                                  // Block back button
-        super.onBackPressed()
     }
 
 
     override fun onClick(v: View?) {
         when (v){
             bt_final_home -> {
+                mpButton.start()
+                mpApplause.stop()
                 var intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
-            bt_final_share -> shareGame()
-            else -> println("ranking") //TODO BOTON DE RANKING
-
+            bt_final_share -> {
+                mpApplause.stop()
+                shareGame()
+            }
+            bt_final_applause -> mpApplause.start()
+            else -> Log.v("FinalActivity", "Error");
         }
     }
 

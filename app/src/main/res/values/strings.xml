@@ -9,5 +9,6 @@
     <string name="final_win_menu">ME GANASTE... </string>
     <string name="lose_menu">!PERDISTE!</string>
     <string name="level_menu">Reyes cazados: </string>
+    <string name="best_score">Mejor puntuación: </string>
 
 </resources>
