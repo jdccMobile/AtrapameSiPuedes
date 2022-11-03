@@ -12,6 +12,7 @@ import android.util.TypedValue
 import android.view.View
 import android.widget.ImageView
 import android.widget.TableRow
+import androidx.core.content.ContextCompat
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
@@ -19,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_game.*
 
 class GameActivity : AppCompatActivity(), View.OnClickListener {
 
+    private var context = this
     private var msInFuture: Long = 0
     private var msExtra : Long = 0
     private lateinit var countDown : CountDownTimer
@@ -207,7 +209,7 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
         countDown = object : CountDownTimer(msInFuture, countDownInterval){
             override fun onTick(millisUntilFinished: Long) {
                 msExtra = millisUntilFinished
-                if ((millisUntilFinished / 1000) < 6 ) tv_time_bottom.setTextColor(Color.parseColor("#FF0000")) // the last 5 seconds are red
+                if ((millisUntilFinished / 1000) < 6 ) tv_time_bottom.setTextColor(ContextCompat.getColor(context, R.color.red)) // the last 5 seconds are red
                 tv_time_bottom.text = (millisUntilFinished / 1000).toString() + " ''"
             }
 
